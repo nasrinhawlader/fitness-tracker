@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Fitness Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Fitness Tracker</h1>
+</header>
+
+<div class="container">
+    <div class="tracker">
+        <h2>Track Your Fitness</h2>
+
+        <form id="fitnessForm">
+            <div class="form-group">
+                <label for="activity">Activity:</label>
+                <input type="text" id="activity" name="activity" required>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Duration (minutes):</label>
+                <input type="number" id="duration" name="duration" required>
+            </div>
+
+            <div class="form-group">
+                <label for="calories">Calories Burned:</label>
+                <input type="number" id="calories" name="calories" required>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Notes:</label>
+                <textarea id="notes" name="notes"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <button type="submit">Add Workout</button>
+        </form>
+    </div>
+
+    <div class="stats">
+        <h2>Workout Stats</h2>
+        <p>Total Workouts: <span id="totalWorkouts">0</span></p>
+        <p>Total Calories: <span id="totalCalories">0</span> kcal</p>
+        <p>Average Duration: <span id="averageDuration">0</span> mins</p>
+        <button id="setGoal">Set Goal</button>
+        <p>Goal: <span id="goal">None</span> <button id="deleteGoal" style="display:none;">Delete Goal</button></p>
+    </div>
+
+    <div class="workouts">
+        <h2>Workout Records</h2>
+        <select id="filterActivity">
+            <option value="all">All Activities</option>
+        </select>
+        <ul id="workoutList"></ul>
+        <button id="exportData">Export Data</button>
+    </div>
+
+    <div class="progress">
+        <h2>Progress Chart</h2>
+        <canvas id="progressChart"></canvas>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Enhanced Fitness Tracker. All rights reserved.</p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
